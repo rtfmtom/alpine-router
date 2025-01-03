@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine.js Router</title>
+  <script type="module" src="./main.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <div x-data="router" x-init="init()">
+    <nav>
+      <a :="link.home">Home</a> <!-- ':=' is equivalant to 'x-bind=' -->
+      <a :="link.about">About</a>
+      <a :="link.contact">Contact</a>
+    </nav>
+
+    <template :="home">
+      <div>
+        <h1>Home Page</h1>
+        <p>Welcome to the home page!</p>
+      </div>
+    </template>
+
+    <template :="about">
+      <div>
+        <h1>About Page</h1>
+        <p>Learn more about us on this page.</p>
+      </div>
+    </template>
+
+    <template :="contact">
+      <div>
+        <h1>Contact Page</h1>
+        <p>Get in touch with us here.</p>
+      </div>
+    </template>
+  </div>
+</body>
+
+</html>
