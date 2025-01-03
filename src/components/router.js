@@ -1,18 +1,21 @@
-import homeTemplate from "./templates/home.js";
-import aboutTemplate from "./templates/about.js";
-import contactTemplate from "./templates/contact.js";
+import homeTemplate from "../templates/home.js";
+import aboutTemplate from "../templates/about.js";
+import contactTemplate from "../templates/contact.js";
+import searchTemplate from "../templates/search.js";
 
 export default function router() {
   const routes = {
     home: "/",
     about: "/about",
     contact: "/contact",
+    search: "/search"
   };
 
   const templates = {
     [routes.home]: homeTemplate,
     [routes.about]: aboutTemplate,
     [routes.contact]: contactTemplate,
+    [routes.search]: searchTemplate,
   };
 
   return {
@@ -54,5 +57,13 @@ export default function router() {
         this.navigate(routes.contact);
       },
     },
+
+    search: {
+      href: routes.search,
+      ["@click.prevent"]() {
+        this.navigate(routes.search);
+      },
+    },
+
   };
 }
