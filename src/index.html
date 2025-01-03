@@ -12,31 +12,13 @@
 <body>
   <div x-data="router" x-init="init()">
     <nav>
-      <a :="link.home">Home</a> <!-- ':=' is equivalant to 'x-bind=' -->
-      <a :="link.about">About</a>
-      <a :="link.contact">Contact</a>
+      <a :="home">Home</a>
+      <a :="about">About</a>
+      <a :="contact">Contact</a>
     </nav>
 
-    <template :="home">
-      <div>
-        <h1>Home Page</h1>
-        <p>Welcome to the home page!</p>
-      </div>
-    </template>
+    <div x-html="html"></div>
 
-    <template :="about">
-      <div>
-        <h1>About Page</h1>
-        <p>Learn more about us on this page.</p>
-      </div>
-    </template>
-
-    <template :="contact">
-      <div>
-        <h1>Contact Page</h1>
-        <p>Get in touch with us here.</p>
-      </div>
-    </template>
   </div>
 </body>
 
